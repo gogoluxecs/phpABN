@@ -1,0 +1,1 @@
+a:2:{s:7:"BaseBot";s:68:"/home/g7/dev/project/org/local/php/abn/lib/context/BaseBot.class.php";s:11:"BaseContext";s:72:"/home/g7/dev/project/org/local/php/abn/lib/context/BaseContext.class.php";}
