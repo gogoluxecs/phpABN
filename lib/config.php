@@ -25,4 +25,5 @@ Autoloader::excludeFolderNamesMatchingRegex('/^svn|git|\..*$/');
 spl_autoload_register(array('Autoloader', 'loadClass'));
 
 // static loader of src files
-require_once dirname(dirname(__FILE__)).'/src/com/google/XMPPHP/XMPP.php';
+require_once '../src/com/google/XMPPHP/XMPP.php';
+require_once '../src/com/google/XMPPHP/BOSH.php';

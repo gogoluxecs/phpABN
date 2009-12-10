@@ -48,7 +48,7 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
 		protected $http_buffer = Array();
 		protected $session = false;
 
-		public function connect($server, $wait='1', $session=false) {
+		public function connect2($server, $wait='1', $session=false) {
 			$this->http_server = $server;
 			$this->use_encryption = false;
 			$this->session = $session;
@@ -72,8 +72,8 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
 				$buff = "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>";
 				xml_parse($this->parser, $buff, false);
 				$response = $this->__sendBody($body);
-				$rxml = new SimpleXMLElement($response);
-				$this->sid = $rxml['sid'];
+				//$rxml = new SimpleXMLElement($response);
+				$this->sid = 3001;
 
 			} else {
 				$buff = "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>";
@@ -121,7 +121,7 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
 			return $xml;
 		}
 
-		public function __process() {
+		public function __process2() {
 			if($this->http_buffer) {
 				$this->__parseBuffer();
 			} else {
@@ -147,7 +147,7 @@ class XMPPHP_BOSH extends XMPPHP_XMPP {
 			}
 		}
 
-		public function send($msg) {
+		public function send2($msg) {
 			$this->log->log("SEND: $msg",  XMPPHP_Log::LEVEL_VERBOSE);
 			$msg = new SimpleXMLElement($msg);
 			#$msg->addAttribute('xmlns', 'jabber:client');
