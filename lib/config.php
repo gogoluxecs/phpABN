@@ -6,11 +6,12 @@ require_once '../src/com/anthonybush/Autoloader.php';
 set_error_handler('k_exceptions_error_handler');
 
 set_include_path(
-  PATH_SEPARATOR . dirname(__FILE__).'/context/'
-  . PATH_SEPARATOR . dirname(__FILE__).'/'
+  PATH_SEPARATOR . dirname(__FILE__).'/'
+  . PATH_SEPARATOR . dirname(__FILE__).'/context/'
+  . PATH_SEPARATOR . dirname(dirname(__FILE__)).'/src/'
 );
 
-// move to external config class
+// autolaod
 foreach (explode(PATH_SEPARATOR, ini_get("include_path")) as $path)
 {
   if (strlen($path) > 0 && $path{strlen($path)-1} != DIRECTORY_SEPARATOR)
@@ -24,6 +25,5 @@ Autoloader::excludeFolderNamesMatchingRegex('/^svn|git|\..*$/');
 
 spl_autoload_register(array('Autoloader', 'loadClass'));
 
-/*
-spl_autoload_register('k_autoload');
-*/
+// static loader of src files
+require_once dirname(dirname(__FILE__)).'/src/com/google/XMPPHP/XMPP.php';
