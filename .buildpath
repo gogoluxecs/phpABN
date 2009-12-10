@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry kind="src" path="src/com/google/XMPPHP"/>
-	<buildpathentry kind="src" path="www"/>
-	<buildpathentry kind="src" path="xmpphp-0.1rc2-r77"/>
+	<buildpathentry kind="src" path=""/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 </buildpath>
