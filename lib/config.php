@@ -7,7 +7,6 @@ set_error_handler('k_exceptions_error_handler');
 
 set_include_path(
   PATH_SEPARATOR . dirname(__FILE__).'/'
-  . PATH_SEPARATOR . dirname(__FILE__).'/context/'
   . PATH_SEPARATOR . dirname(dirname(__FILE__)).'/src/'
 );
 
